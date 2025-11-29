@@ -9,6 +9,6 @@ def get_cardapio():
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("SELECT * FROM cardapio")
     cardapio = cursor.fetchall()
-    cursos.close()
+    cursor.close()
     conn.close()
     return jsonify(cardapio)
